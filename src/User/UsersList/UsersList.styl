@@ -1,0 +1,31 @@
+@import '../../Common/Styles/Offsets'
+@import '../../Common/Styles/Colors'
+
+.UsersList
+  padding 0
+
+  list-style none
+
+.Item
+  margin 0
+
+.Link
+  transition all .25s ease-in-out
+
+  background-color transparent
+
+  display block
+
+  padding ($offset / 4) $offset
+
+  text-decoration none
+
+  color inherit
+
+  &:hover
+    background-color $colorLight
+
+  &.Active
+    background-color $colorDark
+
+    cursor default

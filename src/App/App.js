@@ -1,3 +1,5 @@
+import { UsersList } from '@/User';
+
 import './AppFonts';
 import './AppReset';
 
@@ -8,5 +10,6 @@ export default {
 
   components: {
     AppAside,
+    UsersList,
   },
 };

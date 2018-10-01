@@ -1,7 +1,9 @@
 <template>
   <div class="AppAside">
     <h1 class="Title" v-text="title" />
-    <slot class="Content" />
+    <div class="Content">
+      <slot />
+    </div>
     <div class="Footer" />
   </div>
 </template>
