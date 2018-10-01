@@ -1,6 +1,6 @@
-import { addStore } from '@/Common/Vue';
+import store from '@/store';
 
-addStore('Users', {
+store.registerModule('Users', {
   namespaced: true,
 
   state: {
