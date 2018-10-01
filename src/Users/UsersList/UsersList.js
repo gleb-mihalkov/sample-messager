@@ -1,12 +1,14 @@
 import { mapGetters } from 'vuex';
 
-import { getUserLink } from './UsersListFilters';
+import { getUserLink } from './UsersList.filters';
+
+import './UsersList.store';
 
 export default {
   name: 'UsersList',
 
   computed: {
-    ...mapGetters('user/usersList', ['users']),
+    ...mapGetters('UsersList', ['users']),
   },
 
   filters: {

@@ -1,4 +1,4 @@
-import { UsersList } from '@/User';
+import { UsersList } from '@/Users';
 
 import './AppFonts';
 import './AppReset';
