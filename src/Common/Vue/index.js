@@ -1,2 +1,2 @@
 /* eslint-disable */
-export { default as addStore } from './AddStore';
+export { default as registerModule } from './RegisterModule';

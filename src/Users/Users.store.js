@@ -1,23 +1,10 @@
-import store from '@/store';
+import { registerModule } from '@/Common/Vue';
 
-store.registerModule('Users', {
+registerModule('Users', {
   namespaced: true,
 
   state: {
-    entities: {
-      1: {
-        id: 1,
-        email: 'demo-user-a@fake.mail',
-      },
-      2: {
-        id: 2,
-        email: 'demo-user-b@fake.mail',
-      },
-      3: {
-        id: 3,
-        email: 'demo-user-c@fake.mail',
-      },
-    },
+    entities: {},
   },
 
   getters: {
@@ -30,6 +17,27 @@ store.registerModule('Users', {
 
     item(state) {
       return id => state.entities[id];
+    },
+  },
+
+  mutations: {
+
+    add(state, value) {
+      const { id } = value;
+      const item = state.entities[id] || {};
+
+      // eslint-disable-next-line
+      state.entities[id] = {
+        ...item,
+        ...value,
+      };
+    },
+  },
+
+  actions: {
+
+    add({ commit }, user) {
+      commit('add', user);
     },
   },
 });
