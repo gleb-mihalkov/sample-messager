@@ -7,7 +7,7 @@
       >
       <a
         v-text="user.email"
-        :href="user | getUserLink"
+        :href="`/chat/${user.id}`"
         class="Link"
         />
     </li>
