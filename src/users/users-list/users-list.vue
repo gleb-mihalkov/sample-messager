@@ -14,5 +14,5 @@
   </ul>
 </template>
 
-<script src="./UsersList.js" />
-<style src="./UsersList.styl" lang="stylus" scoped />
+<script src="./users-list.js" />
+<style src="./users-list.styl" lang="stylus" scoped />

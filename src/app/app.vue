@@ -7,5 +7,5 @@
   </div>
 </template>
 
-<script src="./App.js" />
-<style src="./App.styl" lang="stylus" scoped />
+<script src="./app.js" />
+<style src="./app.styl" lang="stylus" scoped />

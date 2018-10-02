@@ -3,17 +3,17 @@ import {
   mapActions,
 } from 'vuex';
 
-import './UsersList.store';
+import './users-list.store';
 
 export default {
   name: 'UsersList',
 
   computed: {
-    ...mapGetters('UsersList', ['users']),
+    ...mapGetters('usersList', ['users']),
   },
 
   methods: {
-    ...mapActions('UsersList', ['pull']),
+    ...mapActions('usersList', ['pull']),
   },
 
   mounted() {

@@ -8,5 +8,5 @@
   </div>
 </template>
 
-<script src="./AppAside.js" />
-<style src="./AppAside.styl" lang="stylus" scoped />
+<script src="./app-aside.js" />
+<style src="./app-aside.styl" lang="stylus" scoped />
