@@ -9,14 +9,17 @@ export default {
   name: 'UsersList',
 
   computed: {
-    ...mapGetters('usersList', ['users']),
+    ...mapGetters('usersList', [
+      'isFetched',
+      'list',
+    ]),
   },
 
   methods: {
-    ...mapActions('usersList', ['pull']),
+    ...mapActions('usersList', ['fetch']),
   },
 
   mounted() {
-    this.pull();
+    this.fetch();
   },
 };

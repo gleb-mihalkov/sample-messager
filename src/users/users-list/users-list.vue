@@ -1,7 +1,10 @@
 <template>
-  <ul class="UsersList">
+  <ul
+    v-if="isFetched"
+    class="UsersList"
+    >
     <li
-      v-for="user in users"
+      v-for="user in list"
       :key="user.id"
       class="Item"
       >

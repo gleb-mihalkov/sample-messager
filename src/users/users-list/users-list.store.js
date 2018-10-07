@@ -31,8 +31,8 @@ registerModule('usersList', {
 
   actions: {
 
-    async pull({ rootGetters, commit, dispatch }) {
-      commit('users', null);
+    async fetch({ rootGetters, commit, dispatch }) {
+      commit('list', null);
 
       const create = rootGetters['users/create'];
 
@@ -47,11 +47,11 @@ registerModule('usersList', {
 
         const user = create(id, email);
 
-        dispatch('users/add', user, { root: true });
+        dispatch('users/save', user, { root: true });
         ids.push(user.id);
       }
 
-      commit('users', ids);
+      commit('list', ids);
     },
   },
 

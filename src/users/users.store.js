@@ -6,7 +6,7 @@ import {
 } from '@/common/vue';
 
 register('users', create((id, email) => {
-  assert.isNotEmpty(id);
+  assert.isAbove(id, 0);
   assert.isNotEmpty(email);
 
   return {
