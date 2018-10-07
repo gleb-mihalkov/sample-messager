@@ -1,4 +1,7 @@
-import { registerModule } from '@/common/vue';
+import {
+  registerModule,
+  getItem,
+} from '@/common/vue';
 
 import fetchUsers from './fetch-users-list';
 
@@ -15,9 +18,8 @@ registerModule('usersList', {
       return state.data !== null;
     },
 
-    list(state, { isFetched }, _root, rootGetters) {
-      const list = rootGetters['users/list'];
-      return isFetched ? list(state.data) : [];
+    list(state) {
+      return state.data;
     },
   },
 
@@ -31,27 +33,13 @@ registerModule('usersList', {
 
   actions: {
 
-    async fetch({ rootGetters, commit, dispatch }) {
+    async fetch({ commit }) {
       commit('list', null);
 
-      const create = rootGetters['users/create'];
-
       const users = await fetchUsers();
-      const ids = [];
+      const items = users.map(item => getItem('users', item.id, item.email));
 
-      for (let i = 0; i < users.length; i += 1) {
-        const {
-          email,
-          id,
-        } = users[i];
-
-        const user = create(id, email);
-
-        dispatch('users/save', user, { root: true });
-        ids.push(user.id);
-      }
-
-      commit('list', ids);
+      commit('list', items);
     },
   },
 

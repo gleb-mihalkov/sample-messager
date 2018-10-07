@@ -8,5 +8,6 @@ export default (namespace, module) => {
     return;
   }
 
-  store.registerModule(namespace, module);
+  const extended = Object.assign({ namespaced: true }, module);
+  store.registerModule(namespace, extended);
 };
